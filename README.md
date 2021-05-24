@@ -25,7 +25,7 @@ It is assumed that the Google Cloud SDK is already installed.
    in the file.**
 1. Under _config/_ you will find a _cloudbuild.yaml_ file that automates the deployment of the cloud function using the 
    [Google Cloud Build](https://console.cloud.google.com/cloud-build) service. Replace the corresponding placeholders 
-   there.
+   there. **Please note the comments in the file**
 1. Push your development.   
    
 ### Using Cloud Build Service for Deployment
