@@ -1,0 +1,11 @@
+steps:
+- name: 'docker.io/library/python:3.8'
+  entrypoint: /bin/sh
+  # Run pip install and pytest in the same build step
+  # (pip packages won't be preserved in future steps!)
+  args: [-c, 'pip install -r requirements.txt']
+  dir: 'src'
+- name: 'gcr.io/cloud-builders/gcloud'
+  # Specify below [DISPLAYED NAME OF THE CLOUDFUNCTION], [BUCKET NAME], [NAME OF THE FUNCTION in main.py]
+  args: ['functions', 'deploy', [DISPLAYED NAME OF THE CLOUDFUNCTION], '--trigger-resource=[BUCKET NAME]', '--trigger-event=google.storage.object.finalize', '--runtime', 'python38', '--entry-point', [NAME OF THE FUNCTION in main.py], '--region=europe-west3']
+  dir: 'src'
