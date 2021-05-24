@@ -2,7 +2,7 @@ from google.cloud import storage
 from google.cloud import bigquery
 
 
-def yourEntrypoint(event, context):
+def yourEntrypoint(event, context):  # Change the name of the function
     """
     Trigger function for individual processing of a file
     :param event: Contains all meta information like bucket name, filename etc.
