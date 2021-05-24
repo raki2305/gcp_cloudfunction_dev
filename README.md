@@ -2,7 +2,7 @@
 This repository shows how Google Cloud Platform (GCP) cloud functions can be developed
 locally and automatically deployed on GCP.
 
-Created by Rakibul Haque and Christian Croseck.
+Created by Rakibul Haque and Christian Croseck. 👋 
 
 ## Steps
 
