@@ -2,6 +2,8 @@
 This repository shows how Google Cloud Platform (GCP) cloud functions can be developed
 locally and automatically deployed on GCP.
 
+Furthermore you are welcome to read our article about this template in Medium: [Click here](https://towardsdatascience.com/develop-and-test-google-cloud-functions-locally-and-deploy-7908d6573f9d)
+
 Created by Rakibul Haque and Christian Croseck. 👋 
 
 ## Steps
