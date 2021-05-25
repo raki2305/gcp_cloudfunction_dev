@@ -31,7 +31,10 @@ It is assumed that the Google Cloud SDK is already installed.
 1. Push your development.   
    
 ### Using Cloud Build Service for Deployment
-Cloud build is used to set up a CI/CD pipeline. 
+Cloud build is used to set up a CI/CD pipeline. Set up a trigger that the cloud function is redeployed with each push to 
+its specified branch. There are the following two options for setting up a trigger:
+
+#### Option 1: Set up manually via the Googe web interface
 1. Within the [Google Cloud Build](https://console.cloud.google.com/cloud-build) service on the left side click on "Trigger".
 1. Click on [Create Trigger](https://console.cloud.google.com/cloud-build/triggers/add)
 1. Please fill in everything accordingly.
@@ -42,6 +45,16 @@ Cloud build is used to set up a CI/CD pipeline.
         - Location = /config/cloudbuild.yaml
     
 1. Finally click on "Create".
+
+#### Option 2: Automated setup with Terraform (for the lazy guys ;-) ) 
+Prerequisite: Terraform is installed. If not please download [here](https://www.terraform.io/downloads.html).
+1. Open the file _terraform/main.tf_
+1. Replace all placeholders (capital letters) accordingly.
+1. Open command line and go to the project folder _gcf_datalake/terraform_.
+1. Please execute the following commands:
+   1. `terraform init` (_Downloads the Google components and sets the project in Terraform_).
+   1. `terraform apply` (_Runs the Terraform script and creates the resources_)
+1. **Optional**: Deletion of the just created trigger with `terraform destroy`
 
 **Note**: With each push to the specified branch, the cloud function is automatically deployed.
 
